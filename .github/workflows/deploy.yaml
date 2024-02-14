@@ -9,6 +9,7 @@ jobs:
   build:
     name: Build_docs
     runs-on: windows-latest
+    environment: Production
     steps:
       - uses: actions/checkout@v4
       - name: Build doc
@@ -24,6 +25,7 @@ jobs:
     name: Deploy_docs
     needs: build
     runs-on: windows-latest
+    environment: Production
     steps:
      - uses: actions/checkout@v4
        with:
