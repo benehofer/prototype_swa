@@ -1,4 +1,6 @@
 npm install -g @azure/static-web-apps-cli
 $swatoken=$(az staticwebapp secrets list --name 'stapp-hofb-wup-tst-sn-01' -o tsv --query "properties.apiKey")
+write-Host $swaToken
 gci
-swa deploy .\ --deployment-token $swatoken --env Production
+$res=$(swa deploy --deployment-token $swatoken --env Production)
+
