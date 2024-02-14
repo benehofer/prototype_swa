@@ -1,0 +1,1831 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Internal API section</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="###descrption###">
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+
+</head> 
+
+<body class="docs-page">
+<header class="header fixed-top">	    
+	<div class="branding docs-branding">
+		<div class="container-fluid position-relative py-2">
+			<div class="docs-logo-wrapper">
+				<button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none" type="button">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<div class="site-logo"><a class="navbar-brand" href="https://www.wagner.ch"><img class="logo-icon me-2" src="assets/images/wagner_logo.png" alt="logo"></a></div>
+			</div><!--//docs-logo-wrapper-->
+			<div class="docs-top-utilities d-flex justify-content-end align-items-center">
+				<!--
+				<div class="top-search-box d-none d-lg-flex">
+					<form class="search-form">
+						<input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+						<button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+					</form>
+				</div>
+				-->
+
+				<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+					<li class="list-inline-item"><a href="https://www.facebook.com/pg/wagner.informatik.ch/posts/"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+					<li class="list-inline-item"><a href="https://www.linkedin.com/company/wagnerag"><i class="fab fa-linkedin fa-fw"></i></a></li>
+				</ul><!--//social-list-->
+				<a href="index.html" class="btn btn-primary d-none d-lg-flex">Home</a>
+			</div><!--//docs-top-utilities-->
+		</div><!--//container-->
+	</div><!--//branding-->
+</header><!--//header-->
+
+<div class="docs-wrapper">
+<div id="docs-sidebar" class="docs-sidebar">
+    <div class="top-search-box d-lg-none p-3">
+        <form class="search-form">
+            <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+    <nav id="docs-nav" class="docs-nav navbar">
+        <ul class="section-items list-unstyled nav flex-column pb-3">
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-0"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Internal API section</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-1"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Incident resource type</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-1-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-1-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-1-section-2">patch</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-2"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Servicetask resource type</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-2-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-2-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-2-section-2">patch</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-3"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Subscriptions</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-3-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-3-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-3-section-2">patch</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-3-section-3">delete</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-4"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Incident worknote resource type</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-4-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-4-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-4-section-2">patch</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-5"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Incident attachment resource type</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-5-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-5-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-5-section-2">patch</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-6"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Servicetask worknote resource type</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-6-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-6-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-6-section-2">patch</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-7"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Servicetask attachment resource type</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-7-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-7-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-7-section-2">patch</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-8"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Incident attachment content</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-8-section-0">get</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-9"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Servicetask attachment content</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-9-section-0">get</a></li>
+</ul>
+
+</nav><!--//docs-nav-->
+</div><!--//docs-sidebar-->
+
+
+<div class="docs-content">
+<div class="container">
+<article class="docs-article" id="article-0">
+<header class="docs-header">
+    <h1 class="docs-heading">Internal API section</h1>
+    <section class="docs-intro">
+        <p>This set of API endpoints is for the SNOW side. The API offers functions to create and manage incidents and subscriptions. The incident information will be forwarded to the customer. Subscriptions allow to to subscribe to incident events.</p>
+    </section><!--//docs-intro-->
+</header>
+
+</article>
+
+<article class="docs-article" id="article-1">
+<header class="docs-header">
+    <h1 class="docs-heading">Incident resource type</h1>
+    <section class="docs-intro">
+        <p>The Incident resource type represents an ITSM Incident record. An incident is an event in a system that leads to a problem or failure of the latter. In addition to descriptive attributes, an incident record can contain additional file attachments, e.g. printscreens, which serve to describe the error condition in detail. Incident records also contain worknotes in which the logging of the processing steps is logged. The APi allows the creation, editing and deletion of Incident records.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-1-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves a specific incident or all incident records.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/internal/incident/{incidentid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>False</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-1-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/internal/incident</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-1-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an existing active incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/internal/incident/{incidentid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-2">
+<header class="docs-header">
+    <h1 class="docs-heading">Servicetask resource type</h1>
+    <section class="docs-intro">
+        <p>The Servicetask resource type represents an ITSM service request record. A service request may be defined as a formal request for service from an employee, customer, or vendor. These requests are necessary for initiating a pre-defined and agreed-upon service action as a normal part of service delivery. More simply put, service requests generally involve procuring or requesting access to something that is not currently available to the employee.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-2-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves a specific servicetask or all servicetask records.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/internal/servicetask/{servicetaskid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>servicetaskid</td>
+                    <td>False</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-2-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new servicetask.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/internal/servicetask</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-2-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an existing active servicetask.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/internal/servicetask/{servicetaskid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>servicetaskid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-3">
+<header class="docs-header">
+    <h1 class="docs-heading">Subscriptions</h1>
+    <section class="docs-intro">
+        <p>The Spidertalk API uses a webhook mechanism to send notifications about new or changed data. The recipient of such notifications is a web service with corresponding URL listeners. The subscription resource type allows subscribing to such notifications. The URL of the receiving web service including query strings and any necessary http headers can be defined.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-3-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves a specific subscription or all active subscriptions.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/internal/subscription/{subscriptionid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>subscriptionid</td>
+                    <td>False</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-3-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new subscription.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/internal/subscription</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-3-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an existing subscription.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/internal/subscription/{subscriptionid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>subscriptionid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-3-section-3">
+<h2 class="section-heading">delete</h2>
+<p>Deletes/Deactivates an existing subscription.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">delete</th>
+            <td>/api/internal/subscription/{subscriptionid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>subscriptionid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-4">
+<header class="docs-header">
+    <h1 class="docs-heading">Incident worknote resource type</h1>
+    <section class="docs-intro">
+        <p>In incident worknote resource types, processing steps of the respective incident are logged. A worknote contains various description attributes. The API includes functions for creating, modifying and deleting incident worknotes.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-4-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves a specific worknote or all worknotes from an active incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/internal/incident/{incidentid}/worknote/{worknoteid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>worknoteid</td>
+                    <td>False</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-4-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new worknote to an existing incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/internal/incident/{incidentid}/worknote</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-4-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an axisting worknote of an incident record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/internal/incident/{incidentid}/worknote/{worknoteid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>worknoteid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-5">
+<header class="docs-header">
+    <h1 class="docs-heading">Incident attachment resource type</h1>
+    <section class="docs-intro">
+        <p>Resources of type incident attachment contain data about attachments of incident resource types. The resource type contains metadata about the respective attachment as well as the actual content of the file. The API provides endpoints for creating, editing, and deleting attachment.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-5-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves a specific attachement or all attachmens of an incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/internal/incident/{incidentid}/attachment/{attachmentid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>attachmentid</td>
+                    <td>False</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-5-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new attachment to an existing incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/internal/incident/{incidentid}/attachment</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-5-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an existing attachment of an incident record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/internal/incident/{incidentid}/attachment/{attachmentid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>attachmentid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-6">
+<header class="docs-header">
+    <h1 class="docs-heading">Servicetask worknote resource type</h1>
+    <section class="docs-intro">
+        <p>In servicetask worknote resource types, processing steps of the respective servicetask are logged. A worknote contains various description attributes. The API includes functions for creating, modifying and deleting servicetask worknotes.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-6-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves a specific worknote or all worknotes from an active servicetask.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/internal/servicetask/{servicetaskid}/worknote/{worknoteid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>servicetaskid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>worknoteid</td>
+                    <td>False</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-6-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new worknote to an existing servicetask.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/internal/servicetask/{servicetaskid}/worknote</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>servicetaskid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-6-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an axisting worknote of an servicetask record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/internal/servicetask/{servicetaskid}/worknote/{worknoteid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>servicetaskid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>worknoteid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-7">
+<header class="docs-header">
+    <h1 class="docs-heading">Servicetask attachment resource type</h1>
+    <section class="docs-intro">
+        <p>Resources of type servicetask attachment contain data about attachments of servicetask resource types. The resource type contains metadata about the respective attachment as well as the actual content of the file. The API provides endpoints for creating, editing, and deleting attachment.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-7-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves a specific attachement or all attachmens of an servicetask.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/internal/servicetask/{servicetaskid}/attachment/{attachmentid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>servicetaskid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>attachmentid</td>
+                    <td>False</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-7-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new attachment to an existing servicetask.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/internal/servicetask/{servicetaskid}/attachment</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>servicetaskid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-7-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an existing attachment of an servicetask record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/internal/servicetask/{servicetaskid}/attachment/{attachmentid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>servicetaskid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>attachmentid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-8">
+<header class="docs-header">
+    <h1 class="docs-heading">Incident attachment content</h1>
+    <section class="docs-intro">
+        <p>The incident attachment content endpoint can be used to download the file content of the attachment. The file content is available as an array of bytes from the API.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-8-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves the file content of an attachment.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/internal/incident/{incidentid}/attachment/{attachmentid}/$value</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>attachmentid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">[array of byte]</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[array of byte]</td>
+                    <td>Byte array of the file content</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-9">
+<header class="docs-header">
+    <h1 class="docs-heading">Servicetask attachment content</h1>
+    <section class="docs-intro">
+        <p>The servicetask attachment content endpoint can be used to download the file content of the attachment. The file content is available as an array of bytes from the API.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-9-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves the file content of an attachment.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/internal/servicetask/{servicetaskid}/attachment/{attachmentid}/$value</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>servicetaskid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>attachmentid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">[array of byte]</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[array of byte]</td>
+                    <td>Byte array of the file content</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+</div>
+</div>
+</div><!--//docs-wrapper-->
+
+<!-- Javascript -->          
+<script src="assets/plugins/popper.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
+
+<!-- Page Specific JS -->
+<script src="assets/plugins/smoothscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<script src="assets/js/highlight-custom.js"></script> 
+<script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
+<script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+<script src="assets/js/docs.js"></script> 
+
+</body>
+</html>

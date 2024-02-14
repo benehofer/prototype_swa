@@ -1,0 +1,43 @@
+name: 'testswadeploy'
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    name: Build_docs
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build doc
+        shell: pwsh
+        run: .\devops\doc\build.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: doc-build
+          path: snippets\doc\**
+          retention-days: 5
+
+  deploy:
+    name: Deploy_docs
+    needs: build
+    runs-on: windows-latest
+    steps:
+     - uses: actions/checkout@v4
+       with:
+         sparse-checkout: |
+           devops
+     - uses: actions/download-artifact@v4
+       with:
+         name: doc-build
+     - name: Azure login
+       uses: azure/login@v1
+       with:
+         client-id: ${{  secrets.AZURE_CLIENT_ID  }}
+         tenant-id: ${{  secrets.AZURE_TENANT_ID  }}         
+         subscription-id: ${{  secrets.AZURE_SUB_ID  }}
+     - name: Build doc
+       shell: pwsh
+       run: .\devops\doc\deploy.ps1

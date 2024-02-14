@@ -1,0 +1,318 @@
+{
+    "entity" : {
+        "customer" :
+        {
+            "title": "Customer",
+            "description" : "The customer resource type represents a customer in the API. Customers interact with the resources in the public section of the API.  The customer resource is the representation of the corresponding resource in the backend system.<br>A specially-configured customer resource is created to access the internal area."
+        },
+        "allowedip" : 
+        {
+            "title": "Allowed source ip ranges",
+            "description" : "The allowedIP resource type defines the allowed source IP ranges for a client. Each request to the API is checked to see if it comes from one of the allowed ranges. Multiple ranges can be registered for a customer resource."
+        },
+        "allowedurl" : 
+        {
+            "title": "Allowed destination (API) urls",
+            "description" : "The allowedURL resource type defines allowed resources of the API for a customer. For this purpose, urls of the API endpoints are captured; wildcards can be used. For each call, it is checked whether the URL is permitted for the respective customer."
+        },
+        "customersecret" : {
+            "title": "Customer secret",
+            "description" : "The customer secret resource type creates the authentication token for a customer resource. The token contains detailed information about the customer resource. A new secret must be generated each time a change is made to the customer data. The secret must be included in the http header of the call."
+        },
+        "incident" : {
+            "title": "Incident resource type",
+            "description": "The Incident resource type represents an ITSM Incident record. An incident is an event in a system that leads to a problem or failure of the latter. In addition to descriptive attributes, an incident record can contain additional file attachments, e.g. printscreens, which serve to describe the error condition in detail. Incident records also contain worknotes in which the logging of the processing steps is logged. The APi allows the creation, editing and deletion of Incident records."
+        },
+        "incidentattachment" : {
+            "title": "Incident attachment resource type",
+            "description": "Resources of type incident attachment contain data about attachments of incident resource types. The resource type contains metadata about the respective attachment as well as the actual content of the file. The API provides endpoints for creating, editing, and deleting attachment."
+        },
+        "incidentworknote" : {
+            "title": "Incident worknote resource type",
+            "description": "In incident worknote resource types, processing steps of the respective incident are logged. A worknote contains various description attributes. The API includes functions for creating, modifying and deleting incident worknotes."
+        },
+        "incidentattachmentcontent" : {
+            "title": "Incident attachment content",
+            "description": "The incident attachment content endpoint can be used to download the file content of the attachment. The file content is available as an array of bytes from the API."
+        },
+        "servicetask" : {
+            "title": "Servicetask resource type",
+            "description": "The Servicetask resource type represents an ITSM service request record. A service request may be defined as a formal request for service from an employee, customer, or vendor. These requests are necessary for initiating a pre-defined and agreed-upon service action as a normal part of service delivery. More simply put, service requests generally involve procuring or requesting access to something that is not currently available to the employee."
+        },
+        "servicetaskattachment" : {
+            "title": "Servicetask attachment resource type",
+            "description": "Resources of type servicetask attachment contain data about attachments of servicetask resource types. The resource type contains metadata about the respective attachment as well as the actual content of the file. The API provides endpoints for creating, editing, and deleting attachment."
+        },
+        "servicetaskworknote" : {
+            "title": "Servicetask worknote resource type",
+            "description": "In servicetask worknote resource types, processing steps of the respective servicetask are logged. A worknote contains various description attributes. The API includes functions for creating, modifying and deleting servicetask worknotes."
+        },
+        "servicetaskattachmentcontent" : {
+            "title": "Servicetask attachment content",
+            "description": "The servicetask attachment content endpoint can be used to download the file content of the attachment. The file content is available as an array of bytes from the API."
+        },        
+        "subscription" : {
+            "title": "Subscriptions",
+            "description": "The Spidertalk API uses a webhook mechanism to send notifications about new or changed data. The recipient of such notifications is a web service with corresponding URL listeners. The subscription resource type allows subscribing to such notifications. The URL of the receiving web service including query strings and any necessary http headers can be defined."
+        }
+    },
+    "section" : {
+        "manage" : 
+        {
+            "title" : "API Manage section",
+            "description" : "This section of the API is for admin purposes. You can register and manage customers."
+        },
+        "public" : 
+        {
+            "title" : "Public API section",
+            "description" : "This set of API endpoints is for the customer side. The API offers functions to create and manage incidents and subscriptions. The incident information will be forwarded to Wagners ITSM system. Subscriptions allow to to subscribe to incident events."
+        },
+        "internal" : 
+        {
+            "title" : "Internal API section",
+            "description" : "This set of API endpoints is for the SNOW side. The API offers functions to create and manage incidents and subscriptions. The incident information will be forwarded to the customer. Subscriptions allow to to subscribe to incident events."
+        }
+     },
+     "notes" :{
+        "getcustomersecret" : {
+            "text": ""
+        }
+     },
+     "general" : {
+        "articles" : [
+            {
+                "title": "API areas",
+                "text": "The Spidertalk API facilitates digital interaction with the ITSM system of Wagner AG's service organization. The API consists of three areas for the different functions and use cases: public, internal and manage. The area is part of the URL of the given endpoint.",
+                "sections": [
+                    {
+                        "title": "public area",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "The public area provides the functions for the customer system. Via the public functions, customers can transmit information to the API or retrieve it from the API. The public section also provides notifications that can be subscribed to."
+                            },
+                            {
+                                "type": "button",
+                                "caption": "public API",
+                                "link": "public.html"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "internal area",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "The internal area contains functions for the interface to the backend system of Wagner. Via these interfaces information can be received from or sent to the customer side. The internal area also offers webhooks."
+                            },
+                            {
+                                "type": "button",
+                                "caption": "internal API",
+                                "link": "internal.html"
+                            }
+
+                        ]
+                    },
+                    {
+                        "title": "manage area",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Finally, the manage area is used for administration."
+                            },
+                            {
+                                "type": "button",
+                                "caption": "manage API",
+                                "link": "manage.html"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Request header",
+                "text": "Each http call to the API must include a header with the authentication elements.",
+                "sections": [
+                    {
+                        "title": "Header attributes",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Authentication consists of two attributes. A function key allows general access to the API. A customer-specific token identifies the customer and its requirements for a valid call."
+                            },
+                            {
+                                "type": "table",
+                                "records": [
+                                    {
+                                        "aVariable name": "x-functions-key",
+                                        "bDescription": "This key provides basic access to the API."
+                                    },
+                                    {
+                                        "aVariable name": "x-customer-secret",
+                                        "bDescription": "This key uniquely identifies the customer and contains information that can be used to validate the customer's call to the API."
+                                    }
+                                ]
+                            }        
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Using the API",
+                "text": "Spidertalk is a RESTful web API that enables customers to access Wagners ITSM system data.",
+                "sections": [
+                    {
+                        "title": "HTTP methods",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "The API uses the HTTP method on the requests to determine what the request is doing. Depending on the resource, the API may support different methods."
+                            },
+                            {
+                                "type": "table",
+                                "records": [
+                                    {
+                                        "aMethod": "GET",
+                                        "bDescription": "Read data from a resource."
+                                    },
+                                    {
+                                        "aMethod": "POST",
+                                        "bDescription": "Create a new resource."
+                                    },
+                                    {
+                                        "aMethod": "PATCH",
+                                        "bDescription": "Update a resource with new values."
+                                    },
+                                    {
+                                        "aMethod": "DELETE",
+                                        "bDescription": "Remove a resource."
+                                    }
+                                ]
+                            }        
+                        ]
+                    },
+                    {
+                        "title": "Data types",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "The API uses different data types for input and output."
+                            },
+                            {
+                                "type": "table",
+                                "records": [
+                                    {
+                                        "aMethod": "string",
+                                        "bDescription": "String data type."
+                                    },
+                                    {
+                                        "aMethod": "int32",
+                                        "bDescription": "Int32 data type."
+                                    },
+                                    {
+                                        "aMethod": "int64",
+                                        "bDescription": "Int64 data type."
+                                    },
+                                    {
+                                        "aMethod": "decimal",
+                                        "bDescription": "Decimal data type."
+                                    },
+                                    {
+                                        "aMethod": "datetime",
+                                        "bDescription": "Datetime data type."
+                                    },
+                                    {
+                                        "aMethod": "guid",
+                                        "bDescription": "String representation of a guid."
+                                    },
+                                    {
+                                        "aMethod": "email",
+                                        "bDescription": "String representation of a valid email address."
+                                    },
+                                    {
+                                        "aMethod": "cidr",
+                                        "bDescription": "String representation of a valid CIDR range."
+                                    },
+                                    {
+                                        "aMethod": "filedata",
+                                        "bDescription": "Representation of file content; either as array of bytes or as base64 string."
+                                    },
+                                    {
+                                        "aMethod": "contacttype",
+                                        "bDescription": "A ServiceNow contacttype; currently, the only valid value for this is 'ebonding'."
+                                    }
+                                ]
+                            }        
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Notifications",
+                "text": "Spidertalk offers the possibility to subscribe to notifications for certain events on certain entities (see also the Subscriptions section in the documentation of the public or internal area of the API).<br/>When creating a subscription, you essentially have to specify a URL to which the notifications are then sent. Various security elements such as certain http headers or the 'clientstate' attribute can be configured.",
+                "sections": [
+                    {
+                        "title": "Notification bodies",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "title": "Standard subscriptions",
+                                "text": "Data is sent from the Spidertalk webhook via POST to the URL configured in the subscription. A distinction is made between two subscription types<br />For normal subscriptions (without specifying a GoAnywhere project), the following data is sent in a JSON body."
+                            },
+                            {
+                                "type": "table",
+                                "records": [
+                                    {
+                                        "aAttribute": "resource",
+                                        "bDatatype": "string",
+                                        "cDescription": "The name of the resource for which an action that triggers a notification for a specific subscription was executed, e.g. incident."
+                                    },
+                                    {
+                                        "aAttribute": "changeType",
+                                        "bDatatype": "string",
+                                        "cDescription": "The type of action that was performed on the resource, e.g. created."
+                                    },
+                                    {
+                                        "aAttribute": "changeDetail",
+                                        "bDatatype": "string",
+                                        "cDescription": "This field contains detailed information on the action that was executed; this can be information on a sub-resource, for example. In the example of an incident, 'changeDetail' can contain the value 'attachment created', for example."
+                                    },
+                                    {
+                                        "aAttribute": "resourceId",
+                                        "bDatatype": "guid",
+                                        "cDescription": "The unique identifier of the resource on which the action was executed."
+                                    },
+                                    {
+                                        "aAttribute": "resourceUrl",
+                                        "bDatatype": "string",
+                                        "cDescription": "The Spidertalk URL to the resource for which the action was performed."
+                                    },
+                                    {
+                                        "aAttribute": "clientState",
+                                        "bDatatype": "string",
+                                        "cDescription": "The client state attribute of the subscription; this can be used to verify post messages to the endpoint. Each post message will include the value specified here"
+                                    },
+                                    {
+                                        "aAttribute": "subscriptionId",
+                                        "bDatatype": "guid",
+                                        "cDescription": "The unique ID of the subscription for which the notification was triggered."
+                                    },
+                                    {
+                                        "aAttribute": "diffs",
+                                        "bDatatype": "string",
+                                        "cDescription": "Diffs contains a JSON string that contains an array of the changed attributes. Each array element contains the following attributes:<br />attributename - the name of the attribute that has changed<br />previousValue - the value of the attribute before the change<br />newValue - the new value of the attribute<br />If an attribute is not listed in 'diffs', it was not changed during the respective API call."
+                                    }
+                                ]
+                            },
+                            {                                
+                                "type": "text",
+                                "title": "GoAnywhere subscriptions",
+                                "text": "For GoAnywhere subscriptions, the JSON body basically contains the same elements as described above. The attributes are structured differently within the JSON body. An object attribute 'runParameters' is set as the top element, which contains the attribute 'project' with the GoAnywhere project name specified when the subscription was created and an array 'variables', which in turn contains the attributes mentioned above."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+     }
+}

@@ -1,0 +1,51 @@
+{
+    "trailingSlash": "auto",
+    "routes": [
+      {
+        "route": "/.auth/*",
+        "allowedRoles": ["anonymous", "authenticated"]
+      },
+      {
+        "route": "/login",
+        "rewrite": "/.auth/login/aad",
+        "allowedRoles": ["anonymous", "authenticated"]
+      },
+      {
+        "route": "/logout",
+        "redirect": "/.auth/logout",
+        "allowedRoles": ["anonymous", "authenticated"]
+      },        
+      {
+        "route": "/*",
+        "allowedRoles": ["authenticated"]
+      }
+    ],
+    "navigationFallback": {
+      "rewrite": "index.html",
+      "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
+    },
+    "responseOverrides": {
+      "401": {
+        "redirect": "/.auth/login/aad",
+        "statusCode": 302
+      }
+    },
+    "auth": {
+        "identityProviders": {
+            "azureActiveDirectory": {
+                "registration": {
+                    "openIdIssuer": "https://login.microsoftonline.com/f6819965-9fb4-4295-b341-4d250431078c/v2.0",
+                    "clientIdSettingName": "APP_CLIENT_ID",
+                    "clientSecretSettingName": "APP_CLIENT_SECRET"
+                }
+            }
+        }
+    },
+    "globalHeaders": {
+      "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'",
+      "Cache-Control": "no-cache"
+    },
+    "mimeTypes": {
+      ".json": "text/json"
+    }
+  }

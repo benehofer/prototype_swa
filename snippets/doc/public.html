@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Public API section</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="###descrption###">
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+
+</head> 
+
+<body class="docs-page">
+<header class="header fixed-top">	    
+	<div class="branding docs-branding">
+		<div class="container-fluid position-relative py-2">
+			<div class="docs-logo-wrapper">
+				<button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none" type="button">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<div class="site-logo"><a class="navbar-brand" href="https://www.wagner.ch"><img class="logo-icon me-2" src="assets/images/wagner_logo.png" alt="logo"></a></div>
+			</div><!--//docs-logo-wrapper-->
+			<div class="docs-top-utilities d-flex justify-content-end align-items-center">
+				<!--
+				<div class="top-search-box d-none d-lg-flex">
+					<form class="search-form">
+						<input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+						<button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+					</form>
+				</div>
+				-->
+
+				<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+					<li class="list-inline-item"><a href="https://www.facebook.com/pg/wagner.informatik.ch/posts/"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+					<li class="list-inline-item"><a href="https://www.linkedin.com/company/wagnerag"><i class="fab fa-linkedin fa-fw"></i></a></li>
+				</ul><!--//social-list-->
+				<a href="index.html" class="btn btn-primary d-none d-lg-flex">Home</a>
+			</div><!--//docs-top-utilities-->
+		</div><!--//container-->
+	</div><!--//branding-->
+</header><!--//header-->
+
+<div class="docs-wrapper">
+<div id="docs-sidebar" class="docs-sidebar">
+    <div class="top-search-box d-lg-none p-3">
+        <form class="search-form">
+            <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+    <nav id="docs-nav" class="docs-nav navbar">
+        <ul class="section-items list-unstyled nav flex-column pb-3">
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-0"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Public API section</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-1"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Incident resource type</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-1-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-1-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-1-section-2">patch</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-2"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span></a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-2-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-2-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-2-section-2">patch</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-2-section-3">delete</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-3"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span></a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-3-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-3-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-3-section-2">patch</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-4"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span></a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-4-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-4-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-4-section-2">patch</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-5"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span></a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-5-section-0">get</a></li>
+</ul>
+
+</nav><!--//docs-nav-->
+</div><!--//docs-sidebar-->
+
+
+<div class="docs-content">
+<div class="container">
+<article class="docs-article" id="article-0">
+<header class="docs-header">
+    <h1 class="docs-heading">Public API section</h1>
+    <section class="docs-intro">
+        <p>This set of API endpoints is for the customer side. The API offers functions to create and manage incidents and subscriptions. The incident information will be forwarded to Wagners ITSM system. Subscriptions allow to to subscribe to incident events.</p>
+    </section><!--//docs-intro-->
+</header>
+
+</article>
+
+<article class="docs-article" id="article-1">
+<header class="docs-header">
+    <h1 class="docs-heading">Incident resource type</h1>
+    <section class="docs-intro">
+        <p>API to create, retrieve and delete incidents. An incident record can contain worknotes and attachments.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-1-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves a specific incident or all incident records.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/public/incident/{incidentid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>False</td>
+                    <td>The internal ID of the incident</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"affectedusername"</span>: <span class="hljs-string">"Cereuses Pluteus"</span>,
+    <span class="hljs-attr">"affecteduserphone"</span>: <span class="hljs-string">"+41794864303"</span>,
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"aa8641f0-4a84-41e5-b78b-8cbadbeae874"</span>,
+    <span class="hljs-attr">"shortdescription"</span>: <span class="hljs-string">"breasted exonerating unweariedly"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"confounder satisfy psalmodies steady osmometers handcuffs pastoralists campshirts emblematic reprehensibly"</span>,
+    <span class="hljs-attr">"affecteduseremail"</span>: <span class="hljs-string">"gelato@farmworker.com"</span>,
+    <span class="hljs-attr">"longdescription"</span>: <span class="hljs-string">"hypocentral counterplots oxyhemoglobin unwishing churched ironlike overpaying owlishnesses scorches unconsecrated"</span>,
+    <span class="hljs-attr">"incidentid"</span>: <span class="hljs-string"></span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>affectedusername</td>
+                    <td>The name of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>affecteduserphone</td>
+                    <td>The phone number of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>remoteid</td>
+                    <td>The ID of the incident in the remote/customer system</td>
+                </tr>
+                <tr>
+                    <td>shortdescription</td>
+                    <td>The short description of the incident</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>The description of the incident</td>
+                </tr>
+                <tr>
+                    <td>affecteduseremail</td>
+                    <td>The email address of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>longdescription</td>
+                    <td>The long description of the incident</td>
+                </tr>
+                <tr>
+                    <td>incidentid</td>
+                    <td>The internal ID of the incident</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-1-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/public/incident</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"affectedusername"</span>: <span class="hljs-string">"Cereuses Pluteus"</span>,
+    <span class="hljs-attr">"shortdescription"</span>: <span class="hljs-string">"breasted exonerating unweariedly"</span>,
+    <span class="hljs-attr">"affecteduseremail"</span>: <span class="hljs-string">"gelato@farmworker.com"</span>,
+    <span class="hljs-attr">"affecteduserphone"</span>: <span class="hljs-string">"+41794864303"</span>,
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"aa8641f0-4a84-41e5-b78b-8cbadbeae874"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"confounder satisfy psalmodies steady osmometers handcuffs pastoralists campshirts emblematic reprehensibly"</span>,
+    <span class="hljs-attr">"longdescription"</span>: <span class="hljs-string">"hypocentral counterplots oxyhemoglobin unwishing churched ironlike overpaying owlishnesses scorches unconsecrated"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>affectedusername</td>
+                    <td>True</td>
+                    <td>The name of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>shortdescription</td>
+                    <td>True</td>
+                    <td>The short description of the incident</td>
+                </tr>
+                <tr>
+                    <td>affecteduseremail</td>
+                    <td>True</td>
+                    <td>The email address of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>affecteduserphone</td>
+                    <td>False</td>
+                    <td>The phone number of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>remoteid</td>
+                    <td>False</td>
+                    <td>The ID of the incident in the remote/customer system</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>False</td>
+                    <td>The description of the incident</td>
+                </tr>
+                <tr>
+                    <td>longdescription</td>
+                    <td>False</td>
+                    <td>The long description of the incident</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"affectedusername"</span>: <span class="hljs-string">"Cereuses Pluteus"</span>,
+    <span class="hljs-attr">"affecteduserphone"</span>: <span class="hljs-string">"+41794864303"</span>,
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"aa8641f0-4a84-41e5-b78b-8cbadbeae874"</span>,
+    <span class="hljs-attr">"shortdescription"</span>: <span class="hljs-string">"breasted exonerating unweariedly"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"confounder satisfy psalmodies steady osmometers handcuffs pastoralists campshirts emblematic reprehensibly"</span>,
+    <span class="hljs-attr">"affecteduseremail"</span>: <span class="hljs-string">"gelato@farmworker.com"</span>,
+    <span class="hljs-attr">"longdescription"</span>: <span class="hljs-string">"hypocentral counterplots oxyhemoglobin unwishing churched ironlike overpaying owlishnesses scorches unconsecrated"</span>,
+    <span class="hljs-attr">"incidentid"</span>: <span class="hljs-string"></span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>affectedusername</td>
+                    <td>The name of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>affecteduserphone</td>
+                    <td>The phone number of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>remoteid</td>
+                    <td>The ID of the incident in the remote/customer system</td>
+                </tr>
+                <tr>
+                    <td>shortdescription</td>
+                    <td>The short description of the incident</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>The description of the incident</td>
+                </tr>
+                <tr>
+                    <td>affecteduseremail</td>
+                    <td>The email address of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>longdescription</td>
+                    <td>The long description of the incident</td>
+                </tr>
+                <tr>
+                    <td>incidentid</td>
+                    <td>The internal ID of the incident</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-1-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an existing active incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/public/incident/{incidentid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td>The internal ID of the incident</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"affectedusername"</span>: <span class="hljs-string">"Cereuses Pluteus"</span>,
+    <span class="hljs-attr">"shortdescription"</span>: <span class="hljs-string">"breasted exonerating unweariedly"</span>,
+    <span class="hljs-attr">"affecteduseremail"</span>: <span class="hljs-string">"gelato@farmworker.com"</span>,
+    <span class="hljs-attr">"affecteduserphone"</span>: <span class="hljs-string">"+41794864303"</span>,
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"aa8641f0-4a84-41e5-b78b-8cbadbeae874"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"confounder satisfy psalmodies steady osmometers handcuffs pastoralists campshirts emblematic reprehensibly"</span>,
+    <span class="hljs-attr">"longdescription"</span>: <span class="hljs-string">"hypocentral counterplots oxyhemoglobin unwishing churched ironlike overpaying owlishnesses scorches unconsecrated"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>affectedusername</td>
+                    <td>True</td>
+                    <td>The name of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>shortdescription</td>
+                    <td>True</td>
+                    <td>The short description of the incident</td>
+                </tr>
+                <tr>
+                    <td>affecteduseremail</td>
+                    <td>True</td>
+                    <td>The email address of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>affecteduserphone</td>
+                    <td>False</td>
+                    <td>The phone number of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>remoteid</td>
+                    <td>False</td>
+                    <td>The ID of the incident in the remote/customer system</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>False</td>
+                    <td>The description of the incident</td>
+                </tr>
+                <tr>
+                    <td>longdescription</td>
+                    <td>False</td>
+                    <td>The long description of the incident</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"affectedusername"</span>: <span class="hljs-string">"Cereuses Pluteus"</span>,
+    <span class="hljs-attr">"affecteduserphone"</span>: <span class="hljs-string">"+41794864303"</span>,
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"aa8641f0-4a84-41e5-b78b-8cbadbeae874"</span>,
+    <span class="hljs-attr">"shortdescription"</span>: <span class="hljs-string">"breasted exonerating unweariedly"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"confounder satisfy psalmodies steady osmometers handcuffs pastoralists campshirts emblematic reprehensibly"</span>,
+    <span class="hljs-attr">"affecteduseremail"</span>: <span class="hljs-string">"gelato@farmworker.com"</span>,
+    <span class="hljs-attr">"longdescription"</span>: <span class="hljs-string">"hypocentral counterplots oxyhemoglobin unwishing churched ironlike overpaying owlishnesses scorches unconsecrated"</span>,
+    <span class="hljs-attr">"incidentid"</span>: <span class="hljs-string"></span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>affectedusername</td>
+                    <td>The name of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>affecteduserphone</td>
+                    <td>The phone number of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>remoteid</td>
+                    <td>The ID of the incident in the remote/customer system</td>
+                </tr>
+                <tr>
+                    <td>shortdescription</td>
+                    <td>The short description of the incident</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>The description of the incident</td>
+                </tr>
+                <tr>
+                    <td>affecteduseremail</td>
+                    <td>The email address of the affected user of the incident</td>
+                </tr>
+                <tr>
+                    <td>longdescription</td>
+                    <td>The long description of the incident</td>
+                </tr>
+                <tr>
+                    <td>incidentid</td>
+                    <td>The internal ID of the incident</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-2">
+<header class="docs-header">
+    <h1 class="docs-heading">###title###</h1>
+    <section class="docs-intro">
+        <p>###headertext###</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-2-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves a specific subscription or all active subscriptions.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/public/subscription/{subscriptionid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>subscriptionid</td>
+                    <td>False</td>
+                    <td>The internal ID of the subscription</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"expirationdate"</span>: <span class="hljs-string">"07/10/2023 03:01:38"</span>,
+    <span class="hljs-attr">"subscriptionid"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"changetype"</span>: <span class="hljs-string">"created"</span>,
+    <span class="hljs-attr">"notificationheaders"</span>: <span class="hljs-string">'{"Name":"Value","api-key":"XXX5NqiJfHjhgrt8zRTkjuztLxb5o_RIAmJHZGffY9-dFggT=="}'</span>,
+    <span class="hljs-attr">"clientstate"</span>: <span class="hljs-string">"erythroblasts embows holophytic"</span>,
+    <span class="hljs-attr">"notificationurl"</span>: <span class="hljs-string">"https://company.com/api/notification/receiver"</span>,
+    <span class="hljs-attr">"resource"</span>: <span class="hljs-string">"incident"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>expirationdate</td>
+                    <td>The expiration date of the subscription; if no value is specified, the subscription will be active infinitely</td>
+                </tr>
+                <tr>
+                    <td>subscriptionid</td>
+                    <td>The internal ID of the subscription</td>
+                </tr>
+                <tr>
+                    <td>changetype</td>
+                    <td>The monitored change type of the subscription; this value is either 'Created' or 'Modified'</td>
+                </tr>
+                <tr>
+                    <td>notificationheaders</td>
+                    <td>The headers to be used when sending post messages to the endpoint; the value must be a json string representation of the headers</td>
+                </tr>
+                <tr>
+                    <td>clientstate</td>
+                    <td>The client state attribute of the subscription; this can be used to verify post messages to the endpoint. Each post message will include the value specified here</td>
+                </tr>
+                <tr>
+                    <td>notificationurl</td>
+                    <td>The url to be used for the webhook messages optionally including query strings</td>
+                </tr>
+                <tr>
+                    <td>resource</td>
+                    <td>The resource to be monitored for changes; currently only changes in resource 'incident' are available.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-2-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new subscription.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/public/subscription</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"changetype"</span>: <span class="hljs-string">"created"</span>,
+    <span class="hljs-attr">"notificationurl"</span>: <span class="hljs-string">"https://company.com/api/notification/receiver"</span>,
+    <span class="hljs-attr">"resource"</span>: <span class="hljs-string">"incident"</span>,
+    <span class="hljs-attr">"expirationdate"</span>: <span class="hljs-string">"07/10/2023 03:01:38"</span>,
+    <span class="hljs-attr">"notificationheaders"</span>: <span class="hljs-string">'{"Name":"Value","api-key":"XXX5NqiJfHjhgrt8zRTkjuztLxb5o_RIAmJHZGffY9-dFggT=="}'</span>,
+    <span class="hljs-attr">"clientstate"</span>: <span class="hljs-string">"erythroblasts embows holophytic"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>changetype</td>
+                    <td>True</td>
+                    <td>The monitored change type of the subscription; this value is either 'Created' or 'Modified'</td>
+                </tr>
+                <tr>
+                    <td>notificationurl</td>
+                    <td>True</td>
+                    <td>The url to be used for the webhook messages optionally including query strings</td>
+                </tr>
+                <tr>
+                    <td>resource</td>
+                    <td>True</td>
+                    <td>The resource to be monitored for changes; currently only changes in resource 'incident' are available.</td>
+                </tr>
+                <tr>
+                    <td>expirationdate</td>
+                    <td>False</td>
+                    <td>The expiration date of the subscription; if no value is specified, the subscription will be active infinitely</td>
+                </tr>
+                <tr>
+                    <td>notificationheaders</td>
+                    <td>False</td>
+                    <td>The headers to be used when sending post messages to the endpoint; the value must be a json string representation of the headers</td>
+                </tr>
+                <tr>
+                    <td>clientstate</td>
+                    <td>False</td>
+                    <td>The client state attribute of the subscription; this can be used to verify post messages to the endpoint. Each post message will include the value specified here</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"expirationdate"</span>: <span class="hljs-string">"07/10/2023 03:01:38"</span>,
+    <span class="hljs-attr">"subscriptionid"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"changetype"</span>: <span class="hljs-string">"created"</span>,
+    <span class="hljs-attr">"notificationheaders"</span>: <span class="hljs-string">'{"Name":"Value","api-key":"XXX5NqiJfHjhgrt8zRTkjuztLxb5o_RIAmJHZGffY9-dFggT=="}'</span>,
+    <span class="hljs-attr">"clientstate"</span>: <span class="hljs-string">"erythroblasts embows holophytic"</span>,
+    <span class="hljs-attr">"notificationurl"</span>: <span class="hljs-string">"https://company.com/api/notification/receiver"</span>,
+    <span class="hljs-attr">"resource"</span>: <span class="hljs-string">"incident"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>expirationdate</td>
+                    <td>The expiration date of the subscription; if no value is specified, the subscription will be active infinitely</td>
+                </tr>
+                <tr>
+                    <td>subscriptionid</td>
+                    <td>The internal ID of the subscription</td>
+                </tr>
+                <tr>
+                    <td>changetype</td>
+                    <td>The monitored change type of the subscription; this value is either 'Created' or 'Modified'</td>
+                </tr>
+                <tr>
+                    <td>notificationheaders</td>
+                    <td>The headers to be used when sending post messages to the endpoint; the value must be a json string representation of the headers</td>
+                </tr>
+                <tr>
+                    <td>clientstate</td>
+                    <td>The client state attribute of the subscription; this can be used to verify post messages to the endpoint. Each post message will include the value specified here</td>
+                </tr>
+                <tr>
+                    <td>notificationurl</td>
+                    <td>The url to be used for the webhook messages optionally including query strings</td>
+                </tr>
+                <tr>
+                    <td>resource</td>
+                    <td>The resource to be monitored for changes; currently only changes in resource 'incident' are available.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-2-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an existing subscription.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/public/subscription/{subscriptionid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>subscriptionid</td>
+                    <td>True</td>
+                    <td>The internal ID of the subscription</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"changetype"</span>: <span class="hljs-string">"created"</span>,
+    <span class="hljs-attr">"notificationurl"</span>: <span class="hljs-string">"https://company.com/api/notification/receiver"</span>,
+    <span class="hljs-attr">"resource"</span>: <span class="hljs-string">"incident"</span>,
+    <span class="hljs-attr">"expirationdate"</span>: <span class="hljs-string">"07/10/2023 03:01:38"</span>,
+    <span class="hljs-attr">"notificationheaders"</span>: <span class="hljs-string">'{"Name":"Value","api-key":"XXX5NqiJfHjhgrt8zRTkjuztLxb5o_RIAmJHZGffY9-dFggT=="}'</span>,
+    <span class="hljs-attr">"clientstate"</span>: <span class="hljs-string">"erythroblasts embows holophytic"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>changetype</td>
+                    <td>True</td>
+                    <td>The monitored change type of the subscription; this value is either 'Created' or 'Modified'</td>
+                </tr>
+                <tr>
+                    <td>notificationurl</td>
+                    <td>True</td>
+                    <td>The url to be used for the webhook messages optionally including query strings</td>
+                </tr>
+                <tr>
+                    <td>resource</td>
+                    <td>True</td>
+                    <td>The resource to be monitored for changes; currently only changes in resource 'incident' are available.</td>
+                </tr>
+                <tr>
+                    <td>expirationdate</td>
+                    <td>False</td>
+                    <td>The expiration date of the subscription; if no value is specified, the subscription will be active infinitely</td>
+                </tr>
+                <tr>
+                    <td>notificationheaders</td>
+                    <td>False</td>
+                    <td>The headers to be used when sending post messages to the endpoint; the value must be a json string representation of the headers</td>
+                </tr>
+                <tr>
+                    <td>clientstate</td>
+                    <td>False</td>
+                    <td>The client state attribute of the subscription; this can be used to verify post messages to the endpoint. Each post message will include the value specified here</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"expirationdate"</span>: <span class="hljs-string">"07/10/2023 03:01:38"</span>,
+    <span class="hljs-attr">"subscriptionid"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"changetype"</span>: <span class="hljs-string">"created"</span>,
+    <span class="hljs-attr">"notificationheaders"</span>: <span class="hljs-string">'{"Name":"Value","api-key":"XXX5NqiJfHjhgrt8zRTkjuztLxb5o_RIAmJHZGffY9-dFggT=="}'</span>,
+    <span class="hljs-attr">"clientstate"</span>: <span class="hljs-string">"erythroblasts embows holophytic"</span>,
+    <span class="hljs-attr">"notificationurl"</span>: <span class="hljs-string">"https://company.com/api/notification/receiver"</span>,
+    <span class="hljs-attr">"resource"</span>: <span class="hljs-string">"incident"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>expirationdate</td>
+                    <td>The expiration date of the subscription; if no value is specified, the subscription will be active infinitely</td>
+                </tr>
+                <tr>
+                    <td>subscriptionid</td>
+                    <td>The internal ID of the subscription</td>
+                </tr>
+                <tr>
+                    <td>changetype</td>
+                    <td>The monitored change type of the subscription; this value is either 'Created' or 'Modified'</td>
+                </tr>
+                <tr>
+                    <td>notificationheaders</td>
+                    <td>The headers to be used when sending post messages to the endpoint; the value must be a json string representation of the headers</td>
+                </tr>
+                <tr>
+                    <td>clientstate</td>
+                    <td>The client state attribute of the subscription; this can be used to verify post messages to the endpoint. Each post message will include the value specified here</td>
+                </tr>
+                <tr>
+                    <td>notificationurl</td>
+                    <td>The url to be used for the webhook messages optionally including query strings</td>
+                </tr>
+                <tr>
+                    <td>resource</td>
+                    <td>The resource to be monitored for changes; currently only changes in resource 'incident' are available.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-2-section-3">
+<h2 class="section-heading">delete</h2>
+<p>Deletes/Deactivates an existing subscription.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">delete</th>
+            <td>/api/public/subscription/{subscriptionid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>subscriptionid</td>
+                    <td>True</td>
+                    <td>The internal ID of the subscription</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-3">
+<header class="docs-header">
+    <h1 class="docs-heading">###title###</h1>
+    <section class="docs-intro">
+        <p>###headertext###</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-3-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves a specific worknote or all worknotes from an active incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/public/incident/{incidentid}/worknote/{worknoteid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td>The internal ID of the incident</td>
+                </tr>
+                <tr>
+                    <td>worknoteid</td>
+                    <td>False</td>
+                    <td>The internal ID of the worknote</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"85236ab7-2689-46e3-b282-25eb9dcbebd6"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"patronage hermit blackener chaff frightfulnesses movable libidinous sufferable dottier mule"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"croakers indigotins vacuity"</span>,
+    <span class="hljs-attr">"worknoteid"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"longdescription"</span>: <span class="hljs-string">"outwept condylomata uncalculated cannonades quinolin misattributing deferent menswear drippers repent"</span>,
+    <span class="hljs-attr">"$("$($body.itsmapi_parenttype)Id")"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"shortdescription"</span>: <span class="hljs-string">"kiwi papadoms bins"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>remoteid</td>
+                    <td>The ID of the worknote in the remote/customer system</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>The description of the worknote</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>The name of the worknote</td>
+                </tr>
+                <tr>
+                    <td>worknoteid</td>
+                    <td>The internal ID of the worknote</td>
+                </tr>
+                <tr>
+                    <td>longdescription</td>
+                    <td>The long description of the worknote</td>
+                </tr>
+                <tr>
+                    <td>$("$($body.itsmapi_parenttype)Id")</td>
+                    <td>The ID of the parent entity of the worknote</td>
+                </tr>
+                <tr>
+                    <td>shortdescription</td>
+                    <td>The short description of the worknote</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-3-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new worknote to an existing incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/public/incident/{incidentid}/worknote</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td>The internal ID of the incident</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"croakers indigotins vacuity"</span>,
+    <span class="hljs-attr">"shortdescription"</span>: <span class="hljs-string">"kiwi papadoms bins"</span>,
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"85236ab7-2689-46e3-b282-25eb9dcbebd6"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"patronage hermit blackener chaff frightfulnesses movable libidinous sufferable dottier mule"</span>,
+    <span class="hljs-attr">"longdescription"</span>: <span class="hljs-string">"outwept condylomata uncalculated cannonades quinolin misattributing deferent menswear drippers repent"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>name</td>
+                    <td>True</td>
+                    <td>The name of the worknote</td>
+                </tr>
+                <tr>
+                    <td>shortdescription</td>
+                    <td>True</td>
+                    <td>The short description of the worknote</td>
+                </tr>
+                <tr>
+                    <td>remoteid</td>
+                    <td>False</td>
+                    <td>The ID of the worknote in the remote/customer system</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>False</td>
+                    <td>The description of the worknote</td>
+                </tr>
+                <tr>
+                    <td>longdescription</td>
+                    <td>False</td>
+                    <td>The long description of the worknote</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"85236ab7-2689-46e3-b282-25eb9dcbebd6"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"patronage hermit blackener chaff frightfulnesses movable libidinous sufferable dottier mule"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"croakers indigotins vacuity"</span>,
+    <span class="hljs-attr">"worknoteid"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"longdescription"</span>: <span class="hljs-string">"outwept condylomata uncalculated cannonades quinolin misattributing deferent menswear drippers repent"</span>,
+    <span class="hljs-attr">"$("$($body.itsmapi_parenttype)Id")"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"shortdescription"</span>: <span class="hljs-string">"kiwi papadoms bins"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>remoteid</td>
+                    <td>The ID of the worknote in the remote/customer system</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>The description of the worknote</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>The name of the worknote</td>
+                </tr>
+                <tr>
+                    <td>worknoteid</td>
+                    <td>The internal ID of the worknote</td>
+                </tr>
+                <tr>
+                    <td>longdescription</td>
+                    <td>The long description of the worknote</td>
+                </tr>
+                <tr>
+                    <td>$("$($body.itsmapi_parenttype)Id")</td>
+                    <td>The ID of the parent entity of the worknote</td>
+                </tr>
+                <tr>
+                    <td>shortdescription</td>
+                    <td>The short description of the worknote</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-3-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an axisting worknote of an incident record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/public/incident/{incidentid}/worknote/{worknoteid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td>The internal ID of the incident</td>
+                </tr>
+                <tr>
+                    <td>worknoteid</td>
+                    <td>True</td>
+                    <td>The internal ID of the worknote</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"croakers indigotins vacuity"</span>,
+    <span class="hljs-attr">"shortdescription"</span>: <span class="hljs-string">"kiwi papadoms bins"</span>,
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"85236ab7-2689-46e3-b282-25eb9dcbebd6"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"patronage hermit blackener chaff frightfulnesses movable libidinous sufferable dottier mule"</span>,
+    <span class="hljs-attr">"longdescription"</span>: <span class="hljs-string">"outwept condylomata uncalculated cannonades quinolin misattributing deferent menswear drippers repent"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>name</td>
+                    <td>True</td>
+                    <td>The name of the worknote</td>
+                </tr>
+                <tr>
+                    <td>shortdescription</td>
+                    <td>True</td>
+                    <td>The short description of the worknote</td>
+                </tr>
+                <tr>
+                    <td>remoteid</td>
+                    <td>False</td>
+                    <td>The ID of the worknote in the remote/customer system</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>False</td>
+                    <td>The description of the worknote</td>
+                </tr>
+                <tr>
+                    <td>longdescription</td>
+                    <td>False</td>
+                    <td>The long description of the worknote</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"85236ab7-2689-46e3-b282-25eb9dcbebd6"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"patronage hermit blackener chaff frightfulnesses movable libidinous sufferable dottier mule"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"croakers indigotins vacuity"</span>,
+    <span class="hljs-attr">"worknoteid"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"longdescription"</span>: <span class="hljs-string">"outwept condylomata uncalculated cannonades quinolin misattributing deferent menswear drippers repent"</span>,
+    <span class="hljs-attr">"$("$($body.itsmapi_parenttype)Id")"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"shortdescription"</span>: <span class="hljs-string">"kiwi papadoms bins"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>remoteid</td>
+                    <td>The ID of the worknote in the remote/customer system</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>The description of the worknote</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>The name of the worknote</td>
+                </tr>
+                <tr>
+                    <td>worknoteid</td>
+                    <td>The internal ID of the worknote</td>
+                </tr>
+                <tr>
+                    <td>longdescription</td>
+                    <td>The long description of the worknote</td>
+                </tr>
+                <tr>
+                    <td>$("$($body.itsmapi_parenttype)Id")</td>
+                    <td>The ID of the parent entity of the worknote</td>
+                </tr>
+                <tr>
+                    <td>shortdescription</td>
+                    <td>The short description of the worknote</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-4">
+<header class="docs-header">
+    <h1 class="docs-heading">###title###</h1>
+    <section class="docs-intro">
+        <p>###headertext###</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-4-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves a specific attachment or all attachmens of an incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/public/incident/{incidentid}/attachment/{attachmentid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td>The internal ID of the incident</td>
+                </tr>
+                <tr>
+                    <td>attachmentid</td>
+                    <td>False</td>
+                    <td>The internal ID of the attachment, e.g. atta.pdf</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"virilely babu thills detoxified reappraised birdwatch silicles escapements humus spooked"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"hominization hoarinesses centering"</span>,
+    <span class="hljs-attr">"attachmentid"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"filename"</span>: <span class="hljs-string">"restrives.pdf"</span>,
+    <span class="hljs-attr">"$("$($body.itsmapi_parenttype)Id")"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"cc7fe060-473c-46e4-b381-4295bb5f91e9"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>description</td>
+                    <td>The description of the attachment</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>The name of the attachment</td>
+                </tr>
+                <tr>
+                    <td>attachmentid</td>
+                    <td>The internal ID of the attachment, e.g. atta.pdf</td>
+                </tr>
+                <tr>
+                    <td>filename</td>
+                    <td>The filename of the attachment, e.g. file.pdf</td>
+                </tr>
+                <tr>
+                    <td>$("$($body.itsmapi_parenttype)Id")</td>
+                    <td>The ID of the parent entity of the attachment</td>
+                </tr>
+                <tr>
+                    <td>remoteid</td>
+                    <td>The ID of the attachment in the remote (customer) system</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-4-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new attachment to an existing incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/public/incident/{incidentid}/attachment</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td>The internal ID of the incident</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"filename"</span>: <span class="hljs-string">"restrives.pdf"</span>,
+    <span class="hljs-attr">"filedata"</span>: <span class="hljs-string">"[base64filedata]"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"virilely babu thills detoxified reappraised birdwatch silicles escapements humus spooked"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"hominization hoarinesses centering"</span>,
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"cc7fe060-473c-46e4-b381-4295bb5f91e9"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>filename</td>
+                    <td>True</td>
+                    <td>The filename of the attachment, e.g. file.pdf</td>
+                </tr>
+                <tr>
+                    <td>filedata</td>
+                    <td>True</td>
+                    <td>The filedata of the attachment; the file data can either be a base64-String or an array of bytes</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>False</td>
+                    <td>The description of the attachment</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>False</td>
+                    <td>The name of the attachment</td>
+                </tr>
+                <tr>
+                    <td>remoteid</td>
+                    <td>False</td>
+                    <td>The ID of the attachment in the remote (customer) system</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"virilely babu thills detoxified reappraised birdwatch silicles escapements humus spooked"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"hominization hoarinesses centering"</span>,
+    <span class="hljs-attr">"attachmentid"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"filename"</span>: <span class="hljs-string">"restrives.pdf"</span>,
+    <span class="hljs-attr">"$("$($body.itsmapi_parenttype)Id")"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"cc7fe060-473c-46e4-b381-4295bb5f91e9"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>description</td>
+                    <td>The description of the attachment</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>The name of the attachment</td>
+                </tr>
+                <tr>
+                    <td>attachmentid</td>
+                    <td>The internal ID of the attachment, e.g. atta.pdf</td>
+                </tr>
+                <tr>
+                    <td>filename</td>
+                    <td>The filename of the attachment, e.g. file.pdf</td>
+                </tr>
+                <tr>
+                    <td>$("$($body.itsmapi_parenttype)Id")</td>
+                    <td>The ID of the parent entity of the attachment</td>
+                </tr>
+                <tr>
+                    <td>remoteid</td>
+                    <td>The ID of the attachment in the remote (customer) system</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-4-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an existing attachment of an incident.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/public/incident/{incidentid}/attachment/{attachmentid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td>The internal ID of the incident</td>
+                </tr>
+                <tr>
+                    <td>attachmentid</td>
+                    <td>False</td>
+                    <td>The internal ID of the attachment, e.g. atta.pdf</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"filename"</span>: <span class="hljs-string">"restrives.pdf"</span>,
+    <span class="hljs-attr">"filedata"</span>: <span class="hljs-string">"[base64filedata]"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"virilely babu thills detoxified reappraised birdwatch silicles escapements humus spooked"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"hominization hoarinesses centering"</span>,
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"cc7fe060-473c-46e4-b381-4295bb5f91e9"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>filename</td>
+                    <td>True</td>
+                    <td>The filename of the attachment, e.g. file.pdf</td>
+                </tr>
+                <tr>
+                    <td>filedata</td>
+                    <td>True</td>
+                    <td>The filedata of the attachment; the file data can either be a base64-String or an array of bytes</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>False</td>
+                    <td>The description of the attachment</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>False</td>
+                    <td>The name of the attachment</td>
+                </tr>
+                <tr>
+                    <td>remoteid</td>
+                    <td>False</td>
+                    <td>The ID of the attachment in the remote (customer) system</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"virilely babu thills detoxified reappraised birdwatch silicles escapements humus spooked"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"hominization hoarinesses centering"</span>,
+    <span class="hljs-attr">"attachmentid"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"filename"</span>: <span class="hljs-string">"restrives.pdf"</span>,
+    <span class="hljs-attr">"$("$($body.itsmapi_parenttype)Id")"</span>: <span class="hljs-string"></span>,
+    <span class="hljs-attr">"remoteid"</span>: <span class="hljs-string">"cc7fe060-473c-46e4-b381-4295bb5f91e9"</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>description</td>
+                    <td>The description of the attachment</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>The name of the attachment</td>
+                </tr>
+                <tr>
+                    <td>attachmentid</td>
+                    <td>The internal ID of the attachment, e.g. atta.pdf</td>
+                </tr>
+                <tr>
+                    <td>filename</td>
+                    <td>The filename of the attachment, e.g. file.pdf</td>
+                </tr>
+                <tr>
+                    <td>$("$($body.itsmapi_parenttype)Id")</td>
+                    <td>The ID of the parent entity of the attachment</td>
+                </tr>
+                <tr>
+                    <td>remoteid</td>
+                    <td>The ID of the attachment in the remote (customer) system</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-5">
+<header class="docs-header">
+    <h1 class="docs-heading">###title###</h1>
+    <section class="docs-intro">
+        <p>###headertext###</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-5-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves the file content of an attachment.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/public/incident/{incidentid}/attachment/{attachmentid}/$value</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>incidentid</td>
+                    <td>True</td>
+                    <td>The internal ID of the incident</td>
+                </tr>
+                <tr>
+                    <td>attachmentid</td>
+                    <td>True</td>
+                    <td>The internal ID of the attachment, e.g. atta.pdf</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">[array of byte]</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[array of byte]</td>
+                    <td>Byte array of the file content</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+</div>
+</div>
+</div><!--//docs-wrapper-->
+
+<!-- Javascript -->          
+<script src="assets/plugins/popper.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
+
+<!-- Page Specific JS -->
+<script src="assets/plugins/smoothscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<script src="assets/js/highlight-custom.js"></script> 
+<script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
+<script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+<script src="assets/js/docs.js"></script> 
+
+</body>
+</html>

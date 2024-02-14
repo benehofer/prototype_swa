@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>General documentation</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="###descrption###">
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+
+</head> 
+
+<body class="docs-page">
+<header class="header fixed-top">	    
+	<div class="branding docs-branding">
+		<div class="container-fluid position-relative py-2">
+			<div class="docs-logo-wrapper">
+				<button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none" type="button">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<div class="site-logo"><a class="navbar-brand" href="https://www.wagner.ch"><img class="logo-icon me-2" src="assets/images/wagner_logo.png" alt="logo"></a></div>
+			</div><!--//docs-logo-wrapper-->
+			<div class="docs-top-utilities d-flex justify-content-end align-items-center">
+				<!--
+				<div class="top-search-box d-none d-lg-flex">
+					<form class="search-form">
+						<input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+						<button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+					</form>
+				</div>
+				-->
+
+				<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+					<li class="list-inline-item"><a href="https://www.facebook.com/pg/wagner.informatik.ch/posts/"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+					<li class="list-inline-item"><a href="https://www.linkedin.com/company/wagnerag"><i class="fab fa-linkedin fa-fw"></i></a></li>
+				</ul><!--//social-list-->
+				<a href="index.html" class="btn btn-primary d-none d-lg-flex">Home</a>
+			</div><!--//docs-top-utilities-->
+		</div><!--//container-->
+	</div><!--//branding-->
+</header><!--//header-->
+
+<div class="docs-wrapper">
+<div id="docs-sidebar" class="docs-sidebar">
+    <div class="top-search-box d-lg-none p-3">
+        <form class="search-form">
+            <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+    <nav id="docs-nav" class="docs-nav navbar">
+        <ul class="section-items list-unstyled nav flex-column pb-3">
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-0"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>API areas</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-0-section-0">public area</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-0-section-1">internal area</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-0-section-2">manage area</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-1"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Request header</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-1-section-0">Header attributes</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-2"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Using the API</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-2-section-0">HTTP methods</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-2-section-1">Data types</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-3"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Notifications</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-3-section-0">Notification bodies</a></li>
+</ul>
+
+</nav><!--//docs-nav-->
+</div><!--//docs-sidebar-->
+
+
+<div class="docs-content">
+<div class="container">
+<article class="docs-article" id="article-0">
+<header class="docs-header">
+    <h1 class="docs-heading">API areas</h1>
+    <section class="docs-intro">
+        <p>The Spidertalk API facilitates digital interaction with the ITSM system of Wagner AG's service organization. The API consists of three areas for the different functions and use cases: public, internal and manage. The area is part of the URL of the given endpoint.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-0-section-0">
+<h2 class="section-heading">public area</h2>
+<p>The public area provides the functions for the customer system. Via the public functions, customers can transmit information to the API or retrieve it from the API. The public section also provides notifications that can be subscribed to.</p>
+<p><a href="public.html" class="btn btn-primary">public API</a></p></section>
+<section class="docs-section" id="article-0-section-1">
+<h2 class="section-heading">internal area</h2>
+<p>The internal area contains functions for the interface to the backend system of Wagner. Via these interfaces information can be received from or sent to the customer side. The internal area also offers webhooks.</p>
+<p><a href="internal.html" class="btn btn-primary">internal API</a></p></section>
+<section class="docs-section" id="article-0-section-2">
+<h2 class="section-heading">manage area</h2>
+<p>Finally, the manage area is used for administration.</p>
+<p><a href="manage.html" class="btn btn-primary">manage API</a></p></section>
+</article>
+
+<article class="docs-article" id="article-1">
+<header class="docs-header">
+    <h1 class="docs-heading">Request header</h1>
+    <section class="docs-intro">
+        <p>Each http call to the API must include a header with the authentication elements.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-1-section-0">
+<h2 class="section-heading">Header attributes</h2>
+<p>Authentication consists of two attributes. A function key allows general access to the API. A customer-specific token identifies the customer and its requirements for a valid call.</p>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>x-functions-key</td>
+                    <td>This key provides basic access to the API.</td>
+                </tr>
+                <tr>
+                    <td>x-customer-secret</td>
+                    <td>This key uniquely identifies the customer and contains information that can be used to validate the customer's call to the API.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-2">
+<header class="docs-header">
+    <h1 class="docs-heading">Using the API</h1>
+    <section class="docs-intro">
+        <p>Spidertalk is a RESTful web API that enables customers to access Wagners ITSM system data.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-2-section-0">
+<h2 class="section-heading">HTTP methods</h2>
+<p>The API uses the HTTP method on the requests to determine what the request is doing. Depending on the resource, the API may support different methods.</p>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Method</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GET</td>
+                    <td>Read data from a resource.</td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>Create a new resource.</td>
+                </tr>
+                <tr>
+                    <td>PATCH</td>
+                    <td>Update a resource with new values.</td>
+                </tr>
+                <tr>
+                    <td>DELETE</td>
+                    <td>Remove a resource.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-2-section-1">
+<h2 class="section-heading">Data types</h2>
+<p>The API uses different data types for input and output.</p>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Method</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>string</td>
+                    <td>String data type.</td>
+                </tr>
+                <tr>
+                    <td>int32</td>
+                    <td>Int32 data type.</td>
+                </tr>
+                <tr>
+                    <td>int64</td>
+                    <td>Int64 data type.</td>
+                </tr>
+                <tr>
+                    <td>decimal</td>
+                    <td>Decimal data type.</td>
+                </tr>
+                <tr>
+                    <td>datetime</td>
+                    <td>Datetime data type.</td>
+                </tr>
+                <tr>
+                    <td>guid</td>
+                    <td>String representation of a guid.</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>String representation of a valid email address.</td>
+                </tr>
+                <tr>
+                    <td>cidr</td>
+                    <td>String representation of a valid CIDR range.</td>
+                </tr>
+                <tr>
+                    <td>filedata</td>
+                    <td>Representation of file content; either as array of bytes or as base64 string.</td>
+                </tr>
+                <tr>
+                    <td>contacttype</td>
+                    <td>A ServiceNow contacttype; currently, the only valid value for this is 'ebonding'.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-3">
+<header class="docs-header">
+    <h1 class="docs-heading">Notifications</h1>
+    <section class="docs-intro">
+        <p>Spidertalk offers the possibility to subscribe to notifications for certain events on certain entities (see also the Subscriptions section in the documentation of the public or internal area of the API).<br/>When creating a subscription, you essentially have to specify a URL to which the notifications are then sent. Various security elements such as certain http headers or the 'clientstate' attribute can be configured.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-3-section-0">
+<h2 class="section-heading">Notification bodies</h2>
+<h5 class="mt-5">Standard subscriptions</h5>
+<p>Data is sent from the Spidertalk webhook via POST to the URL configured in the subscription. A distinction is made between two subscription types<br />For normal subscriptions (without specifying a GoAnywhere project), the following data is sent in a JSON body.</p>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Attribute</th>
+                    <th scope="col">Datatype</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>resource</td>
+                    <td>string</td>
+                    <td>The name of the resource for which an action that triggers a notification for a specific subscription was executed, e.g. incident.</td>
+                </tr>
+                <tr>
+                    <td>changeType</td>
+                    <td>string</td>
+                    <td>The type of action that was performed on the resource, e.g. created.</td>
+                </tr>
+                <tr>
+                    <td>changeDetail</td>
+                    <td>string</td>
+                    <td>This field contains detailed information on the action that was executed; this can be information on a sub-resource, for example. In the example of an incident, 'changeDetail' can contain the value 'attachment created', for example.</td>
+                </tr>
+                <tr>
+                    <td>resourceId</td>
+                    <td>guid</td>
+                    <td>The unique identifier of the resource on which the action was executed.</td>
+                </tr>
+                <tr>
+                    <td>resourceUrl</td>
+                    <td>string</td>
+                    <td>The Spidertalk URL to the resource for which the action was performed.</td>
+                </tr>
+                <tr>
+                    <td>clientState</td>
+                    <td>string</td>
+                    <td>The client state attribute of the subscription; this can be used to verify post messages to the endpoint. Each post message will include the value specified here</td>
+                </tr>
+                <tr>
+                    <td>subscriptionId</td>
+                    <td>guid</td>
+                    <td>The unique ID of the subscription for which the notification was triggered.</td>
+                </tr>
+                <tr>
+                    <td>diffs</td>
+                    <td>string</td>
+                    <td>Diffs contains a JSON string that contains an array of the changed attributes. Each array element contains the following attributes:<br />attributename - the name of the attribute that has changed<br />previousValue - the value of the attribute before the change<br />newValue - the new value of the attribute<br />If an attribute is not listed in 'diffs', it was not changed during the respective API call.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">GoAnywhere subscriptions</h5>
+<p>For GoAnywhere subscriptions, the JSON body basically contains the same elements as described above. The attributes are structured differently within the JSON body. An object attribute 'runParameters' is set as the top element, which contains the attribute 'project' with the GoAnywhere project name specified when the subscription was created and an array 'variables', which in turn contains the attributes mentioned above.</p>
+</section>
+</article>
+
+</div>
+</div>
+</div><!--//docs-wrapper-->
+
+<!-- Javascript -->          
+<script src="assets/plugins/popper.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
+
+<!-- Page Specific JS -->
+<script src="assets/plugins/smoothscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<script src="assets/js/highlight-custom.js"></script> 
+<script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
+<script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+<script src="assets/js/docs.js"></script> 
+
+</body>
+</html>

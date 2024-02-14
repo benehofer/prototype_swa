@@ -1,0 +1,958 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>API Manage section</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="###descrption###">
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+
+</head> 
+
+<body class="docs-page">
+<header class="header fixed-top">	    
+	<div class="branding docs-branding">
+		<div class="container-fluid position-relative py-2">
+			<div class="docs-logo-wrapper">
+				<button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none" type="button">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<div class="site-logo"><a class="navbar-brand" href="https://www.wagner.ch"><img class="logo-icon me-2" src="assets/images/wagner_logo.png" alt="logo"></a></div>
+			</div><!--//docs-logo-wrapper-->
+			<div class="docs-top-utilities d-flex justify-content-end align-items-center">
+				<!--
+				<div class="top-search-box d-none d-lg-flex">
+					<form class="search-form">
+						<input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+						<button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+					</form>
+				</div>
+				-->
+
+				<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+					<li class="list-inline-item"><a href="https://www.facebook.com/pg/wagner.informatik.ch/posts/"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+					<li class="list-inline-item"><a href="https://www.linkedin.com/company/wagnerag"><i class="fab fa-linkedin fa-fw"></i></a></li>
+				</ul><!--//social-list-->
+				<a href="index.html" class="btn btn-primary d-none d-lg-flex">Home</a>
+			</div><!--//docs-top-utilities-->
+		</div><!--//container-->
+	</div><!--//branding-->
+</header><!--//header-->
+
+<div class="docs-wrapper">
+<div id="docs-sidebar" class="docs-sidebar">
+    <div class="top-search-box d-lg-none p-3">
+        <form class="search-form">
+            <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+    <nav id="docs-nav" class="docs-nav navbar">
+        <ul class="section-items list-unstyled nav flex-column pb-3">
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-0"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>API Manage section</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-1"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Customer</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-1-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-1-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-1-section-2">patch</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-1-section-3">delete</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-2"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Customer secret</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-2-section-0">get</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-3"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Allowed source ip ranges</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-3-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-3-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-3-section-2">patch</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-3-section-3">delete</a></li>
+<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#article-4"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Allowed destination (API) urls</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-4-section-0">get</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-4-section-1">post</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-4-section-2">patch</a></li>
+<li class="nav-item"><a class="nav-link scrollto" href="#article-4-section-3">delete</a></li>
+</ul>
+
+</nav><!--//docs-nav-->
+</div><!--//docs-sidebar-->
+
+
+<div class="docs-content">
+<div class="container">
+<article class="docs-article" id="article-0">
+<header class="docs-header">
+    <h1 class="docs-heading">API Manage section</h1>
+    <section class="docs-intro">
+        <p>This section of the API is for admin purposes. You can register and manage customers.</p>
+    </section><!--//docs-intro-->
+</header>
+
+</article>
+
+<article class="docs-article" id="article-1">
+<header class="docs-header">
+    <h1 class="docs-heading">Customer</h1>
+    <section class="docs-intro">
+        <p>The customer resource type represents a customer in the API. Customers interact with the resources in the public section of the API.  The customer resource is the representation of the corresponding resource in the backend system.<br>A specially-configured customer resource is created to access the internal area.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-1-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves an exiting customer record or all active customer records.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/manage/customer/{customerid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customerid</td>
+                    <td>False</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-1-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new customer record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/manage/customer</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-1-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an existing customer record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/manage/customer/{customerid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customerid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-1-section-3">
+<h2 class="section-heading">delete</h2>
+<p>Deletes/Deactivates a customer record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">delete</th>
+            <td>/api/manage/customer/{customerid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customerid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-2">
+<header class="docs-header">
+    <h1 class="docs-heading">Customer secret</h1>
+    <section class="docs-intro">
+        <p>The customer secret resource type creates the authentication token for a customer resource. The token contains detailed information about the customer resource. A new secret must be generated each time a change is made to the customer data. The secret must be included in the http header of the call.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-2-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves the secret (token) of a customer record. The token includes the allowed source ip ranges and the allowed destination urls for the customer.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/manage/customer/{customerid}/secret</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customerid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+    <span class="hljs-attr">"customersecret"</span>: <span class="hljs-string">dHGHTkjkhJHjJHjIhhjHjHJgRtdFdGGKJHLKH...</span>
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customersecret</td>
+                    <td>The secret/token for the customer record.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-3">
+<header class="docs-header">
+    <h1 class="docs-heading">Allowed source ip ranges</h1>
+    <section class="docs-intro">
+        <p>The allowedIP resource type defines the allowed source IP ranges for a client. Each request to the API is checked to see if it comes from one of the allowed ranges. Multiple ranges can be registered for a customer resource.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-3-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves an allowed ip or all allowed ip ranges from a customer record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/manage/customer/{customerid}/allowedip/{allowedipid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customerid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>allowedipid</td>
+                    <td>False</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-3-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new allowed ip range to a customer record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/manage/customer/{customerid}/allowedip</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customerid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-3-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an existing allowed ip range in a customer record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/manage/customer/{customerid}/allowedip/{allowedipid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customerid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>allowedipid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-3-section-3">
+<h2 class="section-heading">delete</h2>
+<p>Deletes a allowed ip from a customer record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">delete</th>
+            <td>/api/manage/customer/{customerid}/allowedip/{allowedipid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customerid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>allowedipid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+<article class="docs-article" id="article-4">
+<header class="docs-header">
+    <h1 class="docs-heading">Allowed destination (API) urls</h1>
+    <section class="docs-intro">
+        <p>The allowedURL resource type defines allowed resources of the API for a customer. For this purpose, urls of the API endpoints are captured; wildcards can be used. For each call, it is checked whether the URL is permitted for the respective customer.</p>
+    </section><!--//docs-intro-->
+</header>
+
+<section class="docs-section" id="article-4-section-0">
+<h2 class="section-heading">get</h2>
+<p>Retrieves an allowed destination url or all allowed destination urls from a customer record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">get</th>
+            <td>/api/manage/customer/{customerid}/allowedurl/{allowedurlid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customerid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>allowedurlid</td>
+                    <td>False</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-4-section-1">
+<h2 class="section-heading">post</h2>
+<p>Adds a new allowed destination url to a customer record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">post</th>
+            <td>/api/manage/customer/{customerid}/allowedurl</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customerid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-4-section-2">
+<h2 class="section-heading">patch</h2>
+<p>Changes attributes of an existing allowed destination url in a customer record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">patch</th>
+            <td>/api/manage/customer/{customerid}/allowedurl/{allowedurlid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customerid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>allowedurlid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Request body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Request body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Data type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+<h5 class="mt-5">Response body</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded"><code class="json hljs">
+  {
+  }
+
+</code></pre>
+						</div><!--//docs-code-block-->
+<h5 class="mt-5">Response body fields</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+<section class="docs-section" id="article-4-section-3">
+<h2 class="section-heading">delete</h2>
+<p>Deletes an allowed destination url from a customer record.</p>
+<div class="table-responsive my-4">
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="theme-bg-light">delete</th>
+            <td>/api/manage/customer/{customerid}/allowedurl/{allowedurlid}</td>
+        </tr>
+    </tbody>
+</table>
+</div><!--//table-responsive-->
+<h5 class="mt-5">URL variables</h5>
+    <div class="table-responsive my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Variable name</th>
+                    <th scope="col">Required</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customerid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>allowedurlid</td>
+                    <td>True</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--//table-responsive-->
+</section>
+</article>
+
+</div>
+</div>
+</div><!--//docs-wrapper-->
+
+<!-- Javascript -->          
+<script src="assets/plugins/popper.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
+
+<!-- Page Specific JS -->
+<script src="assets/plugins/smoothscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<script src="assets/js/highlight-custom.js"></script> 
+<script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
+<script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+<script src="assets/js/docs.js"></script> 
+
+</body>
+</html>
